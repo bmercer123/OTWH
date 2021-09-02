@@ -18,6 +18,10 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(5, rb.velocity.y);
         }
+        else if (Input.GetKeyDown(KeyCode.Space) )
+        {
+            rb.velocity = new Vector2( rb.velocity.x,10);
+        }
     }
 
 }
