@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -10,8 +11,6 @@ public class Player_Controller : MonoBehaviour
     private Animator anim;
     private Collider2D coll;
 
-    public int cherries = 0;
-
     //Finite State Machine
     private enum State {idle, running, jumping, falling};
     private State state = State.idle;
@@ -20,6 +19,8 @@ public class Player_Controller : MonoBehaviour
     [SerializeField]private LayerMask ground;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 25f;
+    [SerializeField] private int cherries = 0;
+    [SerializeField] private Text cText;
 
 
     private void Start()
@@ -43,6 +44,7 @@ public class Player_Controller : MonoBehaviour
         {
             Destroy(collision.gameObject);
             cherries += 1;
+            cText.text = cherries.ToString();
         }
     }
 
