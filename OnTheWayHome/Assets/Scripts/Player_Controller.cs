@@ -10,6 +10,8 @@ public class Player_Controller : MonoBehaviour
     private Animator anim;
     private Collider2D coll;
 
+    public int cherries = 0;
+
     //Finite State Machine
     private enum State {idle, running, jumping, falling};
     private State state = State.idle;
@@ -32,6 +34,16 @@ public class Player_Controller : MonoBehaviour
         Movement();
         AnimationState();
         anim.SetInteger("state", (int)state); //Set animation based on enumerator state
+    }
+
+    //running trigger colision for colliders
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Collectible")
+        {
+            Destroy(collision.gameObject);
+            cherries += 1;
+        }
     }
 
     private void Movement()
