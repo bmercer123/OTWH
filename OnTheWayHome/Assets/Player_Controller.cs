@@ -47,7 +47,7 @@ public class Player_Controller : MonoBehaviour
 
         if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
         {
-            rb.velocity = new Vector2(rb.velocity.x, 10f);
+            rb.velocity = new Vector2(rb.velocity.x, 25f);
             state = State.jumping;
         }
         VelocityState();
