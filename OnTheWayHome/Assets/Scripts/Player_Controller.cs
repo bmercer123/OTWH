@@ -12,7 +12,7 @@ public class Player_Controller : MonoBehaviour
     private Collider2D coll;
 
     //Finite State Machine
-    private enum State {idle, running, jumping, falling};
+    private enum State {idle, running, jumping, falling, hurt};
     private State state = State.idle;
 
     //Inspector variables
@@ -21,6 +21,8 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private float jumpForce = 25f;
     [SerializeField] private int cherries = 0;
     [SerializeField] private Text cText;
+    [SerializeField] private float hurtForce = 10f;
+
 
 
     private void Start()
@@ -32,7 +34,10 @@ public class Player_Controller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movement();
+        if (state != State.hurt)
+        {
+            Movement();
+        }
         AnimationState();
         anim.SetInteger("state", (int)state); //Set animation based on enumerator state
     }
@@ -45,6 +50,34 @@ public class Player_Controller : MonoBehaviour
             Destroy(collision.gameObject);
             cherries += 1;
             cText.text = cherries.ToString();
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Enemy") 
+        {
+            //destroying an enemy object when falling on them 
+            if (state == State.falling)
+            {
+                Destroy(other.gameObject);
+                Jump();
+            }
+            else
+            {
+                // hurt state
+                state = State.hurt;
+                if (other.gameObject.transform.position.x > transform.position.x)
+                {
+                    //Enemy is to the players right, meaning damage on player should move him left
+                    rb.velocity = new Vector2(-hurtForce, rb.velocity.y);
+                }
+                else 
+                {
+                    //Enemy is to the left, so player moves right on damage
+                    rb.velocity = new Vector2(hurtForce, rb.velocity.y);
+                }
+            }
         }
     }
 
@@ -71,29 +104,43 @@ public class Player_Controller : MonoBehaviour
         //Jumping
         if (Input.GetButtonDown("Jump") && coll.IsTouchingLayers(ground))
         {
-            rb.velocity = new Vector2(rb.velocity.x, jumpForce);
-            state = State.jumping;
+            Jump();
         }
+    }
+
+    private void Jump()
+    {
+        rb.velocity = new Vector2(rb.velocity.x, jumpForce);
+        state = State.jumping;
     }
 
     private void AnimationState()
     {
         if (state == State.jumping)
         {
+            //when y velocity is very close to 0, start falling state
             if (rb.velocity.y < .1f)
             {
                 state = State.falling;
             }
         }
-        else if (state == State.falling) 
+        else if (state == State.falling)
         {
+            //if while falling we touch ground go to idle state
             if (coll.IsTouchingLayers(ground))
             {
                 state = State.idle;
             }
         }
-
-
+        else if (state == State.hurt) 
+        {
+            //when hurt and x absolute value almost 0, go to idle state
+            if (Mathf.Abs(rb.velocity.x) < .1f)
+            {
+                state = State.idle;
+            }
+        }
+        //when velocity on x is over 2, start running state
         else if (Mathf.Abs(rb.velocity.x) > 2f)
         {
             //Moving 
