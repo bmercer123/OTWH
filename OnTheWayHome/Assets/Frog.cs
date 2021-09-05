@@ -12,6 +12,7 @@ public class Frog : MonoBehaviour
     [SerializeField] private LayerMask ground;
     private Collider2D coll;
     private Rigidbody2D rb;
+    private Animator anim;
 
     private bool facingLeft = true;
 
@@ -19,9 +20,31 @@ public class Frog : MonoBehaviour
     {
         coll = GetComponent<Collider2D>();
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
     }
 
     private void Update()
+    {
+        //Transit form Jumping to Falling
+        if (anim.GetBool("Jumping")) 
+        {
+            if (rb.velocity.y < .1)
+            {
+                anim.SetBool("Falling", true);
+                anim.SetBool("Jumping", false);
+            }
+        }
+
+        //Transit from Falling to Idle
+        {
+            if (coll.IsTouchingLayers(ground) && anim.GetBool("Falling"))
+            {
+                anim.SetBool("Falling", false);
+            }
+        }
+    }
+
+    private void eMovement()
     {
         if (facingLeft)
         {
@@ -37,6 +60,7 @@ public class Frog : MonoBehaviour
                 if (coll.IsTouchingLayers(ground))
                 {
                     rb.velocity = new Vector2(-jumpLength, jumpHeight);
+                    anim.SetBool("Jumping", true);
                 }
             }
             else
@@ -44,7 +68,7 @@ public class Frog : MonoBehaviour
                 facingLeft = false;
             }
         }
-        else 
+        else
         {
             {
                 //Test to see if beyond leftCap
@@ -59,6 +83,7 @@ public class Frog : MonoBehaviour
                     if (coll.IsTouchingLayers(ground))
                     {
                         rb.velocity = new Vector2(jumpLength, jumpHeight);
+                        anim.SetBool("Jumping", true);
                     }
                 }
                 else
@@ -67,5 +92,15 @@ public class Frog : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void JumpedOn()
+    {
+        anim.SetTrigger("Death");
+    }
+
+    private void Death()
+    {
+        Destroy(this.gameObject);
     }
 }
