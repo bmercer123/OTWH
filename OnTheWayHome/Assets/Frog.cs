@@ -8,7 +8,7 @@ public class Frog : MonoBehaviour
     [SerializeField]private float rightCap;
 
     [SerializeField] private float jumpLength = 10f;
-    [SerializeField] private float jumpHeight = 20f;
+    [SerializeField] private float jumpHeight = 15f;
     [SerializeField] private LayerMask ground;
     private Collider2D coll;
     private Rigidbody2D rb;
