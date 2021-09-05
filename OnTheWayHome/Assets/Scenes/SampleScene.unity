@@ -561,8 +561,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc7f6c2dd202c44f94e2baaa1882c97, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  leftCap: 22.37
-  rightCap: 34.17
+  leftCap: 25
+  rightCap: 30
   jumpLength: 3
   jumpHeight: 3
   ground:
