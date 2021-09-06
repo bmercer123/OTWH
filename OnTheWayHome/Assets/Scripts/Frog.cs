@@ -11,7 +11,7 @@ public class Frog : Enemy
     [SerializeField] private float jumpHeight = 20f;
     [SerializeField] private LayerMask ground;
     private Collider2D coll;
-    private Rigidbody2D rb;
+   
     
 
     private bool facingLeft = true;
@@ -20,7 +20,7 @@ public class Frog : Enemy
     {
         base.Start();
         coll = GetComponent<Collider2D>();
-        rb = GetComponent<Rigidbody2D>();
+        
       
     }
 
