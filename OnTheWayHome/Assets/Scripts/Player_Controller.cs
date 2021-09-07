@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player_Controller : MonoBehaviour
 {
@@ -25,6 +26,9 @@ public class Player_Controller : MonoBehaviour
     [SerializeField] private float hurtForce = 10f;
     [SerializeField] private AudioSource cherry;
     [SerializeField] private AudioSource footstep;
+    [SerializeField] private int Health;
+    [SerializeField] private Text HealthAmount;
+
 
 
     private void Start()
@@ -32,7 +36,7 @@ public class Player_Controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
-        
+        HealthAmount.text = Health.ToString();
     }
     // Update is called once per frame
     void Update()
@@ -43,6 +47,7 @@ public class Player_Controller : MonoBehaviour
         }
         AnimationState();
         anim.SetInteger("state", (int)state); //Set animation based on enumerator state
+
     }
 
     //running trigger colision for colliders
@@ -81,18 +86,30 @@ public class Player_Controller : MonoBehaviour
             {
                 // hurt state
                 state = State.hurt;
+                Health -= 1;
+                HealthMange();// deals with health reduction and if health less then zero will load new game
+                if (Health <= 0)
+                {
+                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+                }
                 if (other.gameObject.transform.position.x > transform.position.x)
                 {
                     //Enemy is to the players right, meaning damage on player should move him left
                     rb.velocity = new Vector2(-hurtForce, rb.velocity.y);
                 }
-                else 
+                else
                 {
                     //Enemy is to the left, so player moves right on damage
                     rb.velocity = new Vector2(hurtForce, rb.velocity.y);
                 }
             }
         }
+    }
+
+    private void HealthMange()
+    {
+        HealthAmount.text = Health.ToString();
     }
 
     private void Movement()
