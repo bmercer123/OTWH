@@ -1434,7 +1434,7 @@ GameObject:
   - component: {fileID: 1203272428}
   - component: {fileID: 1203272427}
   m_Layer: 0
-  m_Name: GameObject
+  m_Name: Fall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1840,7 +1840,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -407.33902, y: 144.4}
+  m_AnchoredPosition: {x: -794, y: 404}
   m_SizeDelta: {x: 39.863, y: 21.194}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1792139489
@@ -1919,7 +1919,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -469.6364, y: 144.40286}
+  m_AnchoredPosition: {x: -856.3, y: 404}
   m_SizeDelta: {x: 84.7271, y: 21.1943}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1934170459
