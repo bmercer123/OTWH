@@ -1912,6 +1912,30 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d3eaf3b269a8dae42820092e08d6dc00, type: 3}
+--- !u!1 &1051264885 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8760358804871481723, guid: 58fbdd26219250e40b76e50223d75d4c, type: 3}
+  m_PrefabInstance: {fileID: 8760358804463375504}
+  m_PrefabAsset: {fileID: 0}
+--- !u!251 &1051264891
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1051264885}
+  m_Enabled: 1
+  m_UseColliderMask: 1
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 180
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
 --- !u!1 &1061480379
 GameObject:
   m_ObjectHideFlags: 0
@@ -3666,6 +3690,10 @@ PrefabInstance:
     - target: {fileID: 8760358804219047011, guid: 58fbdd26219250e40b76e50223d75d4c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8760358804871481696, guid: 58fbdd26219250e40b76e50223d75d4c, type: 3}
+      propertyPath: m_UsedByEffector
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8760358804871481696, guid: 58fbdd26219250e40b76e50223d75d4c, type: 3}
       propertyPath: m_CompositePaths.m_Paths.Array.size
