@@ -22,7 +22,7 @@ public class Enemy : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
     }
 
-    private void Death()
+    protected void Death()
     {
         Destroy(this.gameObject);
     }
