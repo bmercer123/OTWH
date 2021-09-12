@@ -21,13 +21,9 @@ public class Player_Controller : MonoBehaviour
     [SerializeField]private LayerMask ground;
     [SerializeField] private float speed = 5f;
     [SerializeField] private float jumpForce = 25f;
-    [SerializeField] private int cherries = 0;
-    [SerializeField] private Text cText;
     [SerializeField] private float hurtForce = 10f;
     [SerializeField] private AudioSource cherry;
     [SerializeField] private AudioSource footstep;
-    [SerializeField] private int Health;
-    [SerializeField] private Text HealthAmount;
 
 
 
@@ -36,7 +32,8 @@ public class Player_Controller : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         coll = GetComponent<Collider2D>();
-        HealthAmount.text = Health.ToString();
+        //Using perm from the perm script 
+        PermanentUI.perm.healthAmount.text = PermanentUI.perm.health.ToString();
     }
     // Update is called once per frame
     void Update()
@@ -57,15 +54,15 @@ public class Player_Controller : MonoBehaviour
         {
             cherry.Play();
             Destroy(collision.gameObject);
-            cherries += 1;
-            cText.text = cherries.ToString();
+            PermanentUI.perm.cherries += 1;
+            PermanentUI.perm.cText.text = PermanentUI.perm.cherries.ToString();
         }
         if (collision.tag == "PowerUp")
         {
             cherry.Play();
             Destroy(collision.gameObject);
             jumpForce = 30;
-            GetComponent<SpriteRenderer>().color = Color.yellow;
+            GetComponent<SpriteRenderer>().color = Color.green;
             StartCoroutine(ResetPower());
         }
     }
@@ -86,9 +83,9 @@ public class Player_Controller : MonoBehaviour
             {
                 // hurt state
                 state = State.hurt;
-                Health -= 1;
-                HealthMange();// deals with health reduction and if health less then zero will load new game
-                if (Health <= 0)
+                PermanentUI.perm.health -= 1;
+                HealthManager();// deals with health reduction and if health less then zero will load new game
+                if (PermanentUI.perm.health <= 0)
                 {
                     SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
@@ -107,9 +104,9 @@ public class Player_Controller : MonoBehaviour
         }
     }
 
-    private void HealthMange()
+    private void HealthManager()
     {
-        HealthAmount.text = Health.ToString();
+        PermanentUI.perm.healthAmount.text = PermanentUI.perm.health.ToString();
     }
 
     private void Movement()
@@ -188,7 +185,7 @@ public class Player_Controller : MonoBehaviour
 
     }
     private IEnumerator ResetPower() {
-        yield return new WaitForSeconds(10);
+        yield return new WaitForSeconds(15);
         jumpForce = 20;
         GetComponent<SpriteRenderer>().color = Color.white;
     }

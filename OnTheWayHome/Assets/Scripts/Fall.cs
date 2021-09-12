@@ -11,6 +11,9 @@ public class Fall : MonoBehaviour
         if(collision.gameObject.tag == "Player")
             {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            PermanentUI.perm.health -= 1;
+            PermanentUI.perm.healthAmount.text = PermanentUI.perm.health.ToString();
+            PermanentUI.perm.Reset();
         }
     }
 }
