@@ -87,7 +87,9 @@ public class Player_Controller : MonoBehaviour
                 HealthManager();// deals with health reduction and if health less then zero will load new game
                 if (PermanentUI.perm.health <= 0)
                 {
-                    SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+                    //when player health reaches zero, go to the Game Over scene
+                    //Make the Game Over Scene!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                    loadEnd("TheEnd");
 
                 }
                 if (other.gameObject.transform.position.x > transform.position.x)
@@ -188,5 +190,9 @@ public class Player_Controller : MonoBehaviour
         yield return new WaitForSeconds(15);
         jumpForce = 20;
         GetComponent<SpriteRenderer>().color = Color.white;
+    }
+    public void loadEnd(string TheEnd)
+    {
+        SceneManager.LoadScene(TheEnd);
     }
 }
