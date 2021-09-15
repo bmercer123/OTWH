@@ -27,7 +27,7 @@ public class PermanentUI : MonoBehaviour
         {
             Destroy(gameObject);
         }
-}
+    }
     public void Reset()
     {
         cherries = 0;
