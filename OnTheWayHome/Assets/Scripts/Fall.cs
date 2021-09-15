@@ -18,7 +18,7 @@ public class Fall : MonoBehaviour
         /*if (PermanentUI.perm.health <= 0)
         {
             //when player health reaches zero, go to the Game Over scene
-            //Fix issue with method calling --  An object reference is required for the non-static field, method, or property
+            //Fix issue with method calling --  An object reference is required for the non-static field, method, or property - GGl
             Player_Controller.loadEnd("GameOver");
 
         }*/

@@ -191,7 +191,7 @@ public class Player_Controller : MonoBehaviour
         jumpForce = 20;
         GetComponent<SpriteRenderer>().color = Color.white;
     }
-    public void loadEnd(string GameOver)
+    public static void loadEnd(string GameOver)
     {
         SceneManager.LoadScene(GameOver);
     }
