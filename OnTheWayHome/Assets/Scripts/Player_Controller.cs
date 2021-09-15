@@ -89,7 +89,7 @@ public class Player_Controller : MonoBehaviour
                 {
                     //when player health reaches zero, go to the Game Over scene
                     //Make the Game Over Scene!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                    loadEnd("TheEnd");
+                    loadEnd("GameOver");
 
                 }
                 if (other.gameObject.transform.position.x > transform.position.x)
@@ -191,8 +191,8 @@ public class Player_Controller : MonoBehaviour
         jumpForce = 20;
         GetComponent<SpriteRenderer>().color = Color.white;
     }
-    public void loadEnd(string TheEnd)
+    public void loadEnd(string GameOver)
     {
-        SceneManager.LoadScene(TheEnd);
+        SceneManager.LoadScene(GameOver);
     }
 }
