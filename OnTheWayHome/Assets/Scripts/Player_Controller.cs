@@ -88,7 +88,6 @@ public class Player_Controller : MonoBehaviour
                 if (PermanentUI.perm.health <= 0)
                 {
                     //when player health reaches zero, go to the Game Over scene
-                    //Make the Game Over Scene!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                     loadEnd("GameOver");
 
                 }
