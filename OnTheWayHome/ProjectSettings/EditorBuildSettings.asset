@@ -9,27 +9,24 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/SecondScene.unity
-    guid: fa627eff71b95c445bedcc2be48ef039
-  - enabled: 1
     path: Assets/Scenes/ThirdScene.unity
     guid: d3592a5ce4ae83f498d2b4ef646a4c87
-  - enabled: 1
-    path: Assets/Scenes/FourthScene.unity
-    guid: 9ef91ff1d9fdb3d489419c905e8c4375
   - enabled: 1
     path: Assets/Scenes/FifthScene.unity
     guid: 79b760ad909d2f0478a9bfe4c7b63b54
   - enabled: 1
-    path: Assets/Scenes/SixthScene.unity
-    guid: 5136fdcce66568d44b2186fe879cb8f4
-  - enabled: 1
-    path: Assets/Scenes/SeventhScene.unity
-    guid: 69cb868c2136bb2478c9415548515a29
+    path: Assets/Scenes/SecondScene.unity
+    guid: fa627eff71b95c445bedcc2be48ef039
   - enabled: 1
     path: Assets/Scenes/TheEnd.unity
     guid: ca9bd64198720274780f4b5e0d779a48
   - enabled: 1
     path: Assets/Scenes/GameOver.unity
     guid: 5206fcc5553405a4c9014a4cfbcb5649
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   m_configObjects: {}

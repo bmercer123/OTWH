@@ -376,7 +376,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 60863261}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.1499996, y: 3, z: -10}
+  m_LocalPosition: {x: -7.7099996, y: 0.27000004, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 883655145}
@@ -956,7 +956,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.1499996, y: 3, z: -10}
+  m_LocalPosition: {x: -7.7099996, y: 0.27000004, z: -10}
   m_LocalScale: {x: 2.0559373, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -1796,7 +1796,7 @@ CompositeCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_GeometryType: 0
@@ -1818,7 +1818,7 @@ TilemapCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
@@ -1839,7 +1839,7 @@ PlatformEffector2D:
   m_UseOneWay: 1
   m_UseOneWayGrouping: 0
   m_SurfaceArc: 180
-  m_UseSideFriction: 1
+  m_UseSideFriction: 0
   m_UseSideBounce: 0
   m_SideArc: 0
 --- !u!1 &1061480379
@@ -2679,11 +2679,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 42651952633440349, guid: 05590cc89d32fa54b97bf3834b7c956d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.9
+      value: -8.46
       objectReference: {fileID: 0}
     - target: {fileID: 42651952633440349, guid: 05590cc89d32fa54b97bf3834b7c956d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.3
+      value: 0.57
       objectReference: {fileID: 0}
     - target: {fileID: 42651952633440349, guid: 05590cc89d32fa54b97bf3834b7c956d, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2906,6 +2906,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 7273378896505537405, guid: 190f06bfb76ab4e4a8178986f9d11a7d, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 3a557a04c3b114da9adf0f8308d21f87, type: 3}
     - target: {fileID: 7273378897948616570, guid: 190f06bfb76ab4e4a8178986f9d11a7d, type: 3}
       propertyPath: m_Pivot.x
       value: 0
