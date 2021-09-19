@@ -15,12 +15,17 @@ public class Fall : MonoBehaviour
             PermanentUI.perm.healthAmount.text = PermanentUI.perm.health.ToString();
             PermanentUI.perm.Reset();
         }
-        /*if (PermanentUI.perm.health <= 0)
+        if (PermanentUI.perm.health <= 0)
         {
             //when player health reaches zero, go to the Game Over scene
             //Fix issue with method calling --  An object reference is required for the non-static field, method, or property - GGl
-            Player_Controller.loadEnd("GameOver");
+            loadEnd("GameOver");
 
-        }*/
+        }
+
+         static void loadEnd(string GameOver)
+        {
+            SceneManager.LoadScene(GameOver);
+        }
     }
 }
