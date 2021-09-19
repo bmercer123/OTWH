@@ -9,13 +9,13 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/ThirdScene.unity
+    path: Assets/Scenes/SecondScene.unity
     guid: d3592a5ce4ae83f498d2b4ef646a4c87
   - enabled: 1
-    path: Assets/Scenes/FifthScene.unity
+    path: Assets/Scenes/FourthScene.unity
     guid: 79b760ad909d2f0478a9bfe4c7b63b54
   - enabled: 1
-    path: Assets/Scenes/SecondScene.unity
+    path: Assets/Scenes/FifthScene.unity
     guid: fa627eff71b95c445bedcc2be48ef039
   - enabled: 1
     path: Assets/Scenes/TheEnd.unity
