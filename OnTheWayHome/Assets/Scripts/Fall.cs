@@ -23,9 +23,10 @@ public class Fall : MonoBehaviour
 
         }
 
-         static void loadEnd(string GameOver)
-        {
-            SceneManager.LoadScene(GameOver);
-        }
+       
+    }
+    public static void loadEnd(string GameOver)
+    {
+        SceneManager.LoadScene(GameOver);
     }
 }
