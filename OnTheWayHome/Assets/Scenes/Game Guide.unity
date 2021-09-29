@@ -407,10 +407,10 @@ RectTransform:
   m_Father: {fileID: 810023457}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 243, y: -154}
-  m_SizeDelta: {x: 160, y: 48.3968}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: -80, y: 24.198}
+  m_SizeDelta: {x: 160, y: 48.396805}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1426638616
 MonoBehaviour:
@@ -555,10 +555,10 @@ RectTransform:
   m_Father: {fileID: 810023457}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 2.6541, y: 22.318588}
-  m_SizeDelta: {x: 669.8072, y: 304.2393}
+  m_AnchorMin: {x: 0.5, y: 1}
+  m_AnchorMax: {x: 0.5, y: 1}
+  m_AnchoredPosition: {x: 0.000011325, y: -157.1}
+  m_SizeDelta: {x: 666.9235, y: 282.6115}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1505013504
 MonoBehaviour:
@@ -582,7 +582,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 46
+    m_FontSize: 30
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -595,10 +595,13 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Moves:
 
-    Use left and right aroow keys to move front and back
+    Use left and right arrow keys to move front and back
 
     Spacebar
-    for jump'
+    is for jumping
+
+    If you hit the enemies from the side, you will lose HP, however
+    you destroy them ig you jump on them'
 --- !u!222 &1505013505
 CanvasRenderer:
   m_ObjectHideFlags: 0

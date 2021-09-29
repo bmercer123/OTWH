@@ -17,6 +17,7 @@ public class SceneChanger : MonoBehaviour
     }
     public void PlayGame() {
         SceneManager.LoadScene("SampleScene");
+        PermanentUI.perm.health = 5;
     }
     public void Guide()
     {
