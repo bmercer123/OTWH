@@ -595,13 +595,13 @@ MonoBehaviour:
     m_LineSpacing: 1
   m_Text: 'Moves:
 
-    Use left and right arrow keys to move front and back
+    Use left and right arrow keys to move forward and back
 
     Spacebar
     is for jumping
 
     If you hit the enemies from the side, you will lose HP, however
-    you destroy them ig you jump on them'
+    you destroy them if you jump on them'
 --- !u!222 &1505013505
 CanvasRenderer:
   m_ObjectHideFlags: 0
